@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import EasyTask1 from './components/EasyTask1';
+import EasyTask2 from './components/EasyTask2';
+import EasyTask3 from './components/EasyTask3';
+import Home from './components/Home';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route
+					path="/"
+					element={<Home />}
+				/>
+				<Route
+					path="/task1"
+					element={<EasyTask1 />}
+				/>
+				<Route
+					path="/task2"
+					element={<EasyTask2 />}
+				/>
+				<Route
+					path="/task3"
+					element={<EasyTask3 />}
+				/>
+			</Routes>
+		</BrowserRouter>
+	);
+};
 
 export default App;
